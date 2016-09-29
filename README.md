@@ -10,9 +10,9 @@ The excellent [CS231n](http://cs231n.github.io/) Stanford course already has a g
 **What**: Initialising the weights correctly can improve the performances and speed up the training. Bias usually initialized at 0. For the weights, some recommend using uniform within:
  * For linear layers \[1\]: [-v,v] with v = 1/sqrt(inputSize)
  * For convolution layers \[2\]: [-v,v] with v = 1/sqrt(kernelWidth\*kernelHeight\*inputDepth)
-Batch normalisation \[3\] seems to reduce the need for fine tuned weight initialisation.
 
-**Why**: TODO<br />
+Batch normalisation \[3\] seems to reduce the need for fine tuned weight initialisation.<br />
+**Why**: TODO Explain intuition<br />
 **Ref**:
  1. *Stochastic Gradient Descent Tricks, Leon Bottou*
  2. ?? (default used by Torch)
