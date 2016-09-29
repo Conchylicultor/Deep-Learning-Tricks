@@ -13,6 +13,10 @@ The excellent [CS231n](http://cs231n.github.io/) Stanford course already has a g
 
 ## Training
 
+**What**: In addition to the ground truth 'hard' targets, we can also train a network using the soft targets (softmax output) from another model.<br />
+**Ref**: *Dark knowledge, G. Hinton*
+
+
 ## Regularisation
 
 ## Network architecture
