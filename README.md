@@ -25,7 +25,7 @@ The excellent [CS231n](http://cs231n.github.io/) Stanford course already has a g
 ![Skip connections](imgs/skip.png)<br />
 *Example of skip connection on a RNN*
 
-**What**: Add peephole for LSTM (connect the previous output to the gate's inputs). According to the author, it would help for long time dependencies when the timing is important.<br />
+**What**: Add peephole for LSTM (connect the previous output to the gate's inputs). According to the authors, it would help for long time dependencies when the timing is important.<br />
 **Ref**: *Learning Precise Timing with LSTM Recurrent Networks, Felix A. Gers et al.*
 
 ### Seq2seq
