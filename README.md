@@ -7,6 +7,17 @@ The excellent [CS231n](http://cs231n.github.io/) Stanford course already has a g
 
 ## Initialisation
 
+**What**: Initialising the weights correctly can improve the performances and speed up the training. Bias usually initialized at 0. For the weights, some recommend using uniform within:
+ * For linear layers \[1\]: [-v,v] with v = 1/sqrt(inputSize)
+ * For convolution layers \[2\]: [-v,v] with v = 1/sqrt(kernelWidth\*kernelHeight\*inputDepth)
+Batch normalisation \[3\] seems to reduce the need for fine tuned weight initialisation.
+
+**Why**: TODO<br />
+**Ref**:
+ 1. *Stochastic Gradient Descent Tricks, Leon Bottou*
+ 2. ?? (default used by Torch)
+ 3. *Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift, S. Ioffe and C. Szegedy* (https://arxiv.org/abs/1502.03167)
+
 **What**: For LSTM, initialize the forget bias to one. This speed up the training.<br />
 **Why**: The intuition is that at the beginning of the training, we want the information to propagate from cell to cell, so don't wan't the cell to forget its state.<br />
 **Ref**: *An Empirical Exploration of Recurrent Network Architectures, Rafal Jozefowicz et al.* (cites the trick but not the original authors)
