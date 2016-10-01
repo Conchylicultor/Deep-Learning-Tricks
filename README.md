@@ -11,8 +11,8 @@ The excellent [CS231n](http://cs231n.github.io/) Stanford course already has a g
  * For linear layers \[1\]: [-v,v] with v = 1/sqrt(inputSize)
  * For convolution layers \[2\]: [-v,v] with v = 1/sqrt(kernelWidth\*kernelHeight\*inputDepth)
 
-Batch normalisation \[3\] seems to reduce the need for fine tuned weight initialisation.<br />
-**Why**: TODO Explain intuition<br />
+Batch normalisation \[3\] seems to reduce the need for fine tuned weight initialisation. More recent results propose alternative formulas.<br />
+**Why**: Using the default initialisation, each neurone has a variance that grows with the number of inputs. By scaling each weight by th sqrt(n), it ensure that the neurons will have approximately the same output distribution.<br />
 **Ref**:
  1. *Stochastic Gradient Descent Tricks, Leon Bottou*
  2. ?? (default used by Torch)
@@ -59,5 +59,5 @@ Batch normalisation \[3\] seems to reduce the need for fine tuned weight initial
 
 ## Network compression
 
-**What**: To reduce the number of layers, the batch normalisation layers can be absorbed into the weights by modifying them. This works because batch normalisation simply perform a linear scaling.<br />
+**What**: To reduce the number of layers, the batch normalisation layers can be absorbed into the other weights by modifying those. This works because batch normalisation simply perform a linear scaling.<br />
 **Ref:**:*??*
