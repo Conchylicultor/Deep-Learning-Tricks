@@ -30,6 +30,9 @@ The excellent [CS231n](http://cs231n.github.io/) Stanford course already has a g
 
 ## Regularisation
 
+* **What**: To make Dropout works with RNN, it should only be apply on non-recurrent connections (between layers among a same timestep).<br />
+  **Ref**: *Recurrent Neural Network Regularization, Wojciech Zaremba et al.*
+
 ## Network architecture
 
 * **What**: Use skip connection. Directly connect the intermediate layers to the input/output.<br />
