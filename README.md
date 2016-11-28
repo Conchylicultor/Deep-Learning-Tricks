@@ -73,6 +73,15 @@ The excellent [CS231n](http://cs231n.github.io/) Stanford course already has a g
     1. *??*
     2. *Scheduled Sampling for Sequence Prediction with Recurrent Neural Networks, Samy Bengio et al.* (https://arxiv.org/abs/1506.03099)
 
+### Reinforcement learning
+
+* **What**: Train simultaneously multiple agents with different exploration policies (For instance E-greedy with different values of epsilon). Improve the robustness. On the paper, each agent regularly sample epsilon from a uniform bounded distribution.<br />
+  **Ref**: *Asynchronous Methods for Deep Reinforcement Learning, V. Mnih* (https://arxiv.org/abs/1602.01783)
+
+* **What**: Compute the action every 4 frames instead of every frames. For the other frames, repeat the action.<br />
+  **Why**: Works well on Atari games, when the player reactivity doesn't need to be frame perfect. Using this trick allows to greatly speed up the training (About x4).<br />
+  **Ref**: *Playing Atari with Deep Reinforcement Learning, V. Mnih* (https://arxiv.org/abs/1312.5602)
+
 ## Network compression
 
 * **What**: At inference, to reduce the number of layers, the batch normalization layers can be absorbed into the other weights by modifying those. This works because batch normalization simply perform a linear scaling at testing.<br />
