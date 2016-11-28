@@ -59,7 +59,7 @@ The excellent [CS231n](http://cs231n.github.io/) Stanford course already has a g
 * **What**: Add peephole for LSTM (connect the previous output to the gate's inputs). According to the authors, it would help for long time dependencies when the timing is important.<br />
   **Ref**: *Learning Precise Timing with LSTM Recurrent Networks, Felix A. Gers et al.*
 
-### Seq2seq
+## Seq2seq
 
 * **What**: For seq2seq, reverse the order of the input sequence (\['I', 'am', 'hungry'\] becomes \['hungry', 'am', 'I'\]). Keep the target sequence intact.<br />
   **Why**: From the authors: "*This way, [...] that makes it easy for SGD to “establish communication” between the input and the output. We found this simple data transformation to greatly improve the performance of the LSTM.*"<br />
@@ -73,7 +73,7 @@ The excellent [CS231n](http://cs231n.github.io/) Stanford course already has a g
     1. *??*
     2. *Scheduled Sampling for Sequence Prediction with Recurrent Neural Networks, Samy Bengio et al.* (https://arxiv.org/abs/1506.03099)
 
-### Reinforcement learning
+## Reinforcement learning
 
 * **What**: Train simultaneously multiple agents with different exploration policies (For instance E-greedy with different values of epsilon). Improve the robustness. On the paper, each agent regularly sample epsilon from a uniform bounded distribution.<br />
   **Ref**: *Asynchronous Methods for Deep Reinforcement Learning, V. Mnih* (https://arxiv.org/abs/1602.01783)
