@@ -75,12 +75,19 @@ The excellent [CS231n](http://cs231n.github.io/) Stanford course already has a g
 
 ## Reinforcement learning
 
-* **What**: Train simultaneously multiple agents with different exploration policies (For instance E-greedy with different values of epsilon). Improve the robustness. On the paper, each agent regularly sample epsilon from a uniform bounded distribution.<br />
+* **What**: Asynchronous: Train simultaneously multiple agents with different exploration policies (For instance E-greedy with different values of epsilon). Improve the robustness. On the paper, each agent regularly sample epsilon from a uniform bounded distribution.<br />
   **Ref**: *Asynchronous Methods for Deep Reinforcement Learning, V. Mnih* (https://arxiv.org/abs/1602.01783)
 
-* **What**: Compute the action every 4 frames instead of every frames. For the other frames, repeat the action.<br />
+* **What**: Skip frame: Compute the action every 4 frames instead of every frames. For the other frames, repeat the action.<br />
   **Why**: Works well on Atari games, when the player reactivity doesn't need to be frame perfect. Using this trick allows to greatly speed up the training (About x4).<br />
   **Ref**: *Playing Atari with Deep Reinforcement Learning, V. Mnih* (https://arxiv.org/abs/1312.5602)
+
+* **What**: History: Instead of only taking the current frame as input, stack the last frames together on a single input (size (h, w, c) with 1 grayscale frame by channel). Combined with a skip frame (repeat action) of 4, that means we would stack the frames t, t-4, t-8 and t-12.<br />
+  **Why**: This allows the network to have some momentum information.<br />
+  **Ref**: *Deep Reinforcement Learning with Double Q-learning, V. Mnih* (https://arxiv.org/abs/1509.06461)
+
+* **What**: Experience Replay: Instead of updating every frames as the agent plays, to avoid correlations between the frames, it's better to sample a batch in the history of the transition taken (state, actionTaken, reward, nextState). This is basically the same idea as shuffling the dataset before training for supervised tasks. Some strategies exist to sample batches which contain more information (in the sense prediction different from the real reward).<br />
+  **Ref**: *Prioritized Experience Replay, Tom Schaul* (https://arxiv.org/abs/1511.05952)
 
 ## Network compression
 
