@@ -86,7 +86,7 @@ The excellent [CS231n](http://cs231n.github.io/) Stanford course already has a g
   **Why**: This allows the network to have some momentum information.<br />
   **Ref**: *Deep Reinforcement Learning with Double Q-learning, V. Mnih* (https://arxiv.org/abs/1509.06461)
 
-* **What**: Experience Replay: Instead of updating every frames as the agent plays, to avoid correlations between the frames, it's better to sample a batch in the history of the transition taken (state, actionTaken, reward, nextState). This is basically the same idea as shuffling the dataset before training for supervised tasks. Some strategies exist to sample batches which contain more information (in the sense prediction different from the real reward).<br />
+* **What**: Experience Replay: Instead of updating every frames as the agent plays, to avoid correlations between the frames, it's better to sample a batch in the history of the transition taken (state, actionTaken, reward, nextState). This is basically the same idea as shuffling the dataset before training for supervised tasks. Some strategies exist to sample batches which contain more information (in the sense predicted reward different from real reward).<br />
   **Ref**: *Prioritized Experience Replay, Tom Schaul* (https://arxiv.org/abs/1511.05952)
 
 ## Network compression
