@@ -24,8 +24,8 @@ The excellent [CS231n](http://cs231n.github.io/) Stanford course already has a g
   **Ref**: *An Empirical Exploration of Recurrent Network Architectures, Rafal Jozefowicz et al.* (cites the trick but not the original authors)
 
 * **What**: For t-SNE, the original author recommend a perplexity between 5 and 50 (for dataset with about 5000~10000 points) [1], for bigger dataset, it's recommended to use a bigger one.<br />
-  **Why**: The perplexity determine the size of variance of the Gaussian distribution for each point. It can be seen as the number of affected nearest neighbors. A smaller perplexity will privilegiate local variations (more cluster), a big one will privilegiate the global ones. A perplexity bigger than the number of point don't really makes sense.<br />
-  The other things to take into account is tha the plotted cluster don't conserve their original scale (dense clusters will be diluted) and the distance between clusters isn't necessarily representative [2].<br />
+  **Why**: The perplexity determine the size of variance of the Gaussian distribution for each point. It can be seen as the number of affected nearest neighbors. A smaller perplexity will privilege local variations (more clusters), a big one will privilege the global ones. A perplexity bigger than the number of point don't really makes sense.<br />
+  The other things to take into account is that the plotted clusters don't conserve their original scale (dense clusters will be diluted) and the distance between clusters isn't necessarily representative of the original spacial geometry. Different perplexity can gives complementary informations on the data structure, different runs can gives different results [2].<br />
   **Ref**:
     1. *Visualizing High-Dimensional Data Using t-SNE, L.J.P. van der Maaten*
     2. *How to Use t-SNE Effectively, Wattenberg, et al., Distill, 2016.* ([link](http://distill.pub/2016/misread-tsne/))
