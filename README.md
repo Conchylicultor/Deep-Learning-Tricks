@@ -4,9 +4,22 @@ This is an attempt to enumerate different machine learning training tricks I gat
 Most of the tricks may seem trivial for those who have some experience in machine learning but I feel like while there is a lot of very good theoretical material available for machine learning, there is still a lack of practical advice. Those would really have helped me when I started.<br />
 The excellent [CS231n](http://cs231n.github.io/) Stanford course already has a good list of training tricks.
 
+
+#### Table of Contents
+
+* [Data prepossessing](#data-prepossessing)
+* [Initialization](#initialization)
+* [Training](#training)
+* [Regularization](#regularization)
+* [Network architecture](#network-architecture)
+* [Seq2seq](#seq2seq)
+* [Reinforcement learning](#reinforcement-learning)
+* [Network compression](#network-compression)
+
+
 ## Data prepossessing
 
-## Initialisation
+## Initialization
 
 * **What**: Initializing the weights correctly can improve the performances and speed up the training. Bias usually initialized at 0. For the weights, some recommend using uniform within:
    * For linear layers \[1\]: [-v,v] with v = 1/sqrt(inputSize)
