@@ -1,7 +1,7 @@
 # Deep Learning Tricks
 
 This is an attempt to enumerate different machine learning training tricks I gather around. The goal is to briefly give a description of the trick as well as an intuition about why it is working. My knowledge is quite limited so this is prone to errors/imprecisions. This should be a collaborative work so feel free to complete or correct.<br />
-Most of the tricks may seems trivial for those who have some experience in machine learning but I feel like while there is a lot of very good theoretical material available for machine learning, there is still a lack of practical advice. Those would really have helped me when I started.<br />
+Most of the tricks may seem trivial for those who have some experience in machine learning but I feel like while there is a lot of very good theoretical material available for machine learning, there is still a lack of practical advice. Those would really have helped me when I started.<br />
 The excellent [CS231n](http://cs231n.github.io/) Stanford course already has a good list of training tricks.
 
 ## Data prepossessing
@@ -37,7 +37,6 @@ The excellent [CS231n](http://cs231n.github.io/) Stanford course already has a g
 * **What**: In addition to the ground truth 'hard' targets, we can also train a network using the soft targets (SoftMax outputs with high temperature (about 1-10 depending on the problem)) from another model.<br />
   **Ref**: *Distilling the Knowledge in a Neural Network / Dark knowledge, G. Hinton et al.* (https://arxiv.org/abs/1503.02531)
 
-
 ## Regularization
 
 * **What**: To make Dropout works with RNN, it should only be applied on non-recurrent connections (between layers among a same timestep).<br />
@@ -67,6 +66,9 @@ The excellent [CS231n](http://cs231n.github.io/) Stanford course already has a g
 
 * **What**: Add peephole for LSTM (connect the previous output to the gate's inputs). According to the authors, it would help for long time dependencies when the timing is important.<br />
   **Ref**: *Learning Precise Timing with LSTM Recurrent Networks, Felix A. Gers et al.*
+
+* **What**: Most of deep learning frameworks provide a function to combine the SoftMax and log in a single operation or to compute the SoftMax inside the loss function (`softmax_cross_entropy_with_logits` for TensorFlow, `nn.LogSoftMax` for Torch), that should be used preferably.<br />
+  **Why**: The log(SoftMax) is numerically unstable for small probabilities, thus can lead to overflow and other undesirable results. Note that this is true for some other operations as well. Another popular trick is to add a small number inside the log to avoid the instability `log(softmax + 1e-6)`
 
 ## Seq2seq
 
