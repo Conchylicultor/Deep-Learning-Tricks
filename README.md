@@ -37,6 +37,11 @@ The excellent [CS231n](http://cs231n.github.io/) Stanford course already has a g
 * **What**: In addition to the ground truth 'hard' targets, we can also train a network using the soft targets (SoftMax outputs with high temperature (about 1-10 depending on the problem)) from another model.<br />
   **Ref**: *Distilling the Knowledge in a Neural Network / Dark knowledge, G. Hinton et al.* (https://arxiv.org/abs/1503.02531)
 
+* **What**: The learning rate is probably the most important hyperparameter to tune. A strategy used to select the hyperparameters is to randomly sample them (uniformly or logscale) and see the testing error after a few epoch.
+
+![Hyperparameters](imgs/hyperparameters.png)<br />
+*Some advice for tuning the hyperparameters. Ref: Goodfellow et al 2016 Book*
+
 ## Regularization
 
 * **What**: To make Dropout works with RNN, it should only be applied on non-recurrent connections (between layers among a same timestep).<br />
