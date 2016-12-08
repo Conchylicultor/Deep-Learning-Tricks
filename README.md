@@ -57,7 +57,7 @@ The excellent [CS231n](http://cs231n.github.io/) Stanford course already has a g
 
 ## Regularization
 
-* **What**: To make Dropout works with RNN, it should only be applied on non-recurrent connections (between layers among a same timestep) [1]. Some more recent paper propose some tricks to make dropout works for recurrent connexions [2].<br />
+* **What**: To make Dropout works with RNN, it should only be applied on non-recurrent connections (between layers among a same timestep) [1]. Some more recent paper propose some tricks to make dropout works for recurrent connections [2].<br />
   **Ref**:
     1. *Recurrent Neural Network Regularization, Wojciech Zaremba et al.* (https://arxiv.org/abs/1409.2329)
     2. *Recurrent Dropout without Memory Loss, Stanislau Semeniuta et al.* (https://arxiv.org/abs/1603.05118)
