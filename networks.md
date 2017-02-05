@@ -20,7 +20,7 @@ Define some common neural networks architectures and ideas.
 
 **Before R-CNN**: Sliding windows to classify at each positions.
 
-**YOLO**: Divide the image in a grid of cell. Each cell will predict multiple bounding box candidates with a confidence score (P(Obj)) and each cell predict which object would be in the cell if there was one (ex: P(Cars|Obj)). The bounding box are then thresholded using the confidence score. Each one of the w*h cells predict a vector `[[centerx, centery, w, h, P(obj)]&ast;nb_of_proposal, [P(Car|Obj),..., P(Pers|Obj)]]`.
+**YOLO**: Divide the image in a grid of cell. Each cell will predict multiple bounding box candidates with a confidence score (P(Obj)) and each cell predict which object would be in the cell if there was one (ex: P(Cars|Obj)). The bounding box are then thresholded using the confidence score. Each one of the w*h cells predict a vector `[[centerx, centery, w, h, P(obj)]&nb_of_proposal, [P(Car|Obj),..., P(Pers|Obj)]]`.
 
 **SSD**: Region proposal (bounding boxes) to segment object, then classification, then overlapping detection.
 
