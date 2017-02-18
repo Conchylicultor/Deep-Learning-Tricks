@@ -33,7 +33,7 @@ Define some common neural networks architectures and ideas.
 **DeepMask / Multipath**: 2 networks on to segment objects independently of the class and one to give a label to the segmentation.
 
 **Aerial Scenes Segmentation**: Data quality is important: instead of using binary mask (presence or not of the object) as ground truth, weight the mask (each pixel is weighted by the closed distance to the boundaries). Also bilinear up-sampling of the features maps (due to low resolution of the image (object to detect really small)), feed that to a FC to segment each pixel.
-*Automatic Building Extraction in Aerial Scenes Using Convolutional Networks, Jiangye Yuan*, https://arxiv.org/abs/1602.06564
+*Automatic Building Extraction in Aerial Scenes Using Convolutional Networks, Jiangye Yuan*, ([Arxiv](https://arxiv.org/abs/1602.06564))
 
 ### Image Captioning
 
@@ -71,9 +71,16 @@ Define some common neural networks architectures and ideas.
 
 **UNREAL**: Based on A3C, augment the cost function by adding auxiliary tasks.
 
+**Neural Architecture Search**: Generate new networks architecture by formalizing a network architecture as a sequence and training a RNN to generate it using REINFORCE.
+
+* For CNN, the network sequentially generate filter height, stride, anchors,... for each layers. The anchor allows the connect the layer to a previous one to add skip connections to the network.
+* A version allows to generate RNN cells by formalising a RNN cell as a tree and sequentially generating the nodes properties.
+
+*Neural Architecture Search with Reinforcement learning, Barret Zoph, Quoc V. Le* ([Arxiv](https://arxiv.org/abs/1611.01578))
+
 ## Other (low level)
 
-**Deep learning on graph**: Generalization of convolution to sparse data (organized as a graph). Based on signal processing on graph to defined the Fourier transform operation for graphs.
+**Deep learning on graph**: Generalization of convolution to sparse data (organized as a graph). Based on the field of signal processing on graph which define operations like the Fourier transform for graphs.
 
 **LSTM Variant**: GPU, Grid-LSTM, Bidirectional-LSTM,...
 
