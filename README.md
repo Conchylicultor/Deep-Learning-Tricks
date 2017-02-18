@@ -99,7 +99,7 @@ The excellent [CS231n](http://cs231n.github.io/) Stanford course already has a g
 * **What**: For seq2seq, use different weights for the encoder and decoder networks.<br />
   **Ref**: *Sequence to Sequence Learning with Neural Networks, Ilya Sutskever et al.* (https://arxiv.org/abs/1409.3215)
 
-* **What**: When training, force the correct input on the decoder (teacher forcing), even if the decoder predict a wrong output at the previous step. On testing, use. This make the training much efficient at the beginning. [2] propose an improvement by gradually going from a 'all decoder inputs taken from ground truth' to a 'all decoder inputs taken from previous step prediction' (randomly sampled with a chosen decay to gradually goes from one mode to the other). Seems harder to tune (add a few additional hyperparameters).<br />
+* **What**: When training, force the correct input on the decoder (teacher forcing), even if the decoder predict a wrong output at the previous step. On testing, use the previous step. This make the training much efficient at the beginning. [2] propose an improvement by gradually going from a 'all decoder inputs taken from ground truth' to a 'all decoder inputs taken from previous step prediction' (randomly sampled with a chosen decay to gradually goes from one mode to the other). Seems harder to tune (add a few additional hyperparameters).<br />
   **Ref**:
     1. *??*
     2. *Scheduled Sampling for Sequence Prediction with Recurrent Neural Networks, Samy Bengio et al.* (https://arxiv.org/abs/1506.03099)
