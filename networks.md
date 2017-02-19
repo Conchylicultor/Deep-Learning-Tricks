@@ -80,6 +80,15 @@ Define some common neural networks architectures and ideas.
 
 ## Other (low level)
 
+**PathNet**: !network which can learn independent task and reusing knowledge it has already acquired. Some kind of fancy transfer learning. Works by combining genetics algorithm and gradient descent.
+
+1. Each layers of the network is composed of multiple block/modules (small neural networks like 20 neurons FC or CNN).
+2. The genetic algorithm decide which blocks are used at each layer (paths).
+3. Each path is trained by conventional gradient descent for a few epoch, then the best path is kept and new paths are genetically sampled.
+4. After training on one task the modules from the best path are fixed (can only be used for forward) and the unused ones are reinitialized.
+
+*PathNet: Evolution Channels Gradient Descent in Super Neural Networks, Chrisantha Fernando, Dylan Banarse et al.* ([Arxiv](https://arxiv.org/abs/1701.08734))
+
 **Deep learning on graph**: Generalization of convolution to sparse data (organized as a graph). Based on the field of signal processing on graph which define operations like the Fourier transform for graphs.
 
 **LSTM Variant**: GPU, Grid-LSTM, Bidirectional-LSTM,...
