@@ -87,7 +87,21 @@ Define some common neural networks architectures and ideas.
 3. Each path is trained by conventional gradient descent for a few epoch, then the best path is kept and new paths are genetically sampled.
 4. After training on one task the modules from the best path are fixed (can only be used for forward) and the unused ones are reinitialized.
 
+![Hyperparameters](imgs/pathnet.png)<br />
+*PathNet architecture*
+
 *PathNet: Evolution Channels Gradient Descent in Super Neural Networks, Chrisantha Fernando, Dylan Banarse et al.* ([Arxiv](https://arxiv.org/abs/1701.08734))
+
+**Sparsely-Gated Mixture-of-Experts**: Type of RNN cell allowing the network to have up to hundreds of billions of parameters.
+* The cell contains multiples modules (experts), each containing a different neural networks.
+* A gating network choose which experts are used at each timestep (gating can be sparse or continuous). During training, some noise is added to the gating output to add some stochasticity in which experts are used. A SoftMax is applied on the top-K gating predictions to weight the corresponding expert outputs. A version exist using hierarchical mixture of experts by using a tree of gating networks (the gating networks at one level determine which branches are selected at the next level).
+* A contribution of the paper is about how to train that model efficiently by distributing the experts among devices and keep a batch size as big as possible.
+* Two additional terms are added to the loss. One to penalize the use of always the same expert (each expert has equal importance) and one to ensure a balance load among the experts (each expert process the same number of samples, loss harder to define because non derivable). By just using the importance loss, some experts can process samples very rarely but with high SoftMax score while other can process samples more often but with low weight which impact the distributed computing efficiency.
+
+![Hyperparameters](imgs/SGMoE.png)<br />
+*SGMoE layer*
+
+*Outrageously Large Neural Networks: The Sparsely-Gated Mixture-of-Experts Layer, Noam Shazeer, Azalia Mirhoseini, et al.* ([Arxiv](https://arxiv.org/abs/1701.06538))
 
 **Deep learning on graph**: Generalization of convolution to sparse data (organized as a graph). Based on the field of signal processing on graph which define operations like the Fourier transform for graphs.
 
