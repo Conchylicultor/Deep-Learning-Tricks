@@ -40,6 +40,8 @@ Define some common neural networks architectures and ideas.
 **DeepMask / Multipath**: 2 networks on to segment objects independently of the class and one to give a label to the segmentation.
 
 **Aerial Scenes Segmentation**: Data quality is important: instead of using binary mask (presence or not of the object) as ground truth, weight the mask (each pixel is weighted by the closed distance to the boundaries). Also bilinear up-sampling of the features maps (due to low resolution of the image (object to detect really small)), feed that to a FC to segment each pixel.
+
+![Multi-stage feature maps](imgs/upsampledcnn.png)<br />
 *Automatic Building Extraction in Aerial Scenes Using Convolutional Networks, Jiangye Yuan*, ([Arxiv](https://arxiv.org/abs/1602.06564))
 
 ### Image Captioning
