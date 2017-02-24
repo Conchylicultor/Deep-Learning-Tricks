@@ -27,6 +27,13 @@ Define some common neural networks architectures and ideas.
 
 ### Segmentation
 
+**U-Net**: Add skip connections between the convolutionnal encoder and the deconvolutional decoder.
+
+*U-Net: Convolutional Networks for Biomedical Image Segmentation, Olaf Ronneberger, et al.*, ([Arxiv](https://arxiv.org/abs/1505.04597))
+
+![U-Net](imgs/unet.png)<br />
+*U-Net architecture*
+
 **Multi-task Network Cascades**: Based on ResNet to perform instance based segmentation. Use cascade loss function to divide the segmentation task into 3 sub-tasks. Each task uses as input the output of the previous one (in addition to the shared features computed by the CNN).<br />
 *Instance-aware Semantic Segmentation via Multi-task Network Cascades, Jifeng Dai Kaiming He et al.*
 
