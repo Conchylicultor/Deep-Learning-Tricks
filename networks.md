@@ -62,13 +62,17 @@ Define some common neural networks architectures and ideas.
 
 **Image compression**:...
 
-## Natural Language Processing
+## RNN/Natural Language Processing
 
 **RTNN**: Recursive neural tensor network (not recurrent). Tree-like shape. Use 3d tensor in addition to matrix as weights. Original model used for sentiment analysis.
 
 **Word2Vec**: Project each word in a high dimensional space which encode its semantic meaning (embedding).
 
 **seq2seq**: 2 RNN. The encoder compute a though vector encoding the sentence meaning, the decoder.
+
+**Highway Networks**: Add residual connections to the RNN cells to helps the gradient flow. The residual connection is weighted with the help of a *transform gate*: `y = T(x) * H(x) + (1 - T(x)) * x`
+
+*Highway Networks, R. K. Srivastava, K. Greff, J. Schmidhuber* ([Arxiv](https://arxiv.org/abs/1505.00387))
 
 ## Reinforcement learning
 
@@ -127,6 +131,8 @@ Define some common neural networks architectures and ideas.
 **Pixel**:
 
 **PixelCNN**:
+
+**Pix2pix**:
 
 **WaveNet**:
 
