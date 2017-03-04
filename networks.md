@@ -93,7 +93,7 @@ Define some common neural networks architectures and ideas.
 
 ## Other (low level)
 
-**PathNet**: !network which can learn independent task and reusing knowledge it has already acquired. Some kind of fancy transfer learning. Works by combining genetics algorithm and gradient descent.
+**PathNet**: Network which can learn independent task and reusing knowledge it has already acquired. Some kind of fancy transfer learning. Works by combining genetics algorithm and gradient descent.
 
 1. Each layers of the network is composed of multiple block/modules (small neural networks like 20 neurons FC or CNN).
 2. The genetic algorithm decide which blocks are used at each layer (paths).
