@@ -14,6 +14,12 @@ Define some common neural networks architectures and ideas.
 
 **ResNet**: Use residual connections by connecting the input to the output (`y = conv(x) + x`). Between the layers of different size (for instance after pooling), use 1x1 convolution (to adapt the depth) with striding (to reduce the h/w) on the residual connection (`y = conv(x) + conv1x1(x)`).
 
+**ResNeXt**: Similar to Inception, use multiple blocks in each layer but contrary to Inception, each block is the same. The idea is instead of having blocks with large depth (ex: 256), each block will only apply the convolution on a very small depth (ex: 4). The block are then combined by using 1x1 convolutions to restore dimentionality (ex: 4 to 256), and summing all blocks together.
+
+![ResNeXt](imgs/resnext.png)<br />
+
+*Aggregated Residual Transformations for Deep Neural Networks, Saining Xie, Ross Girshick, et al.*, ([Arxiv](https://arxiv.org/abs/1611.05431))
+
 **Binary network**: The weights of each layers are either +1/-1 (multiply by a floating constant and a bias different for each layer). During forward pass, the network is binarized. During the backward pass, the weights are updated as float. A version exist which also binarize the input (XNOR network).
 
 ### Detection
