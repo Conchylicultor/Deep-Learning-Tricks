@@ -84,6 +84,10 @@ Define some common neural networks architectures and ideas.
 
 **UNREAL**: Based on A3C, augment the cost function by adding auxiliary tasks.
 
+**Evolution Strategies**: Instead of using standard back-propagation, it's possible to just randomly try to modify the weights by injecting random noise. The update step is done with the average of the candidate weights weighted by their associated reward. It is easily parallelizable (each replica can reconstruct other agent perturbations by knowing the seed). Is only competitive in settings where the gradient (of the expected reward) has to be estimated by sampling (otherwise much slower). Some tricks (virtual BN) are needed specially when the reward is difficult to reach just by randomly guessing the weights.
+
+*Evolution Strategies as a Scalable Alternative to Reinforcement Learning, Tim Salimans, Jonathan Ho, Xi Chen, Ilya Sutskever* ([Arxiv](https://arxiv.org/abs/1703.03864))
+
 **Neural Architecture Search**: Generate new networks architecture by formalizing a network architecture as a sequence and training a RNN to generate it using REINFORCE.
 
 * For CNN, the network sequentially generate filter height, stride, anchors,... for each layers. The anchor allows the connect the layer to a previous one to add skip connections to the network.
