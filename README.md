@@ -12,7 +12,7 @@ The excellent [CS231n](http://cs231n.github.io/) Stanford course already has a g
 * [Training](#training)
 * [Regularization](#regularization)
 * [Network architecture](#network-architecture)
-* [Seq2seq](#seq2seq)
+* [NLP](#nlp)
 * [Reinforcement learning](#reinforcement-learning)
 * [Network compression](#network-compression)
 
@@ -90,7 +90,7 @@ The excellent [CS231n](http://cs231n.github.io/) Stanford course already has a g
 * **What**: Most of deep learning frameworks provide a function to combine the SoftMax and log in a single operation or to compute the SoftMax inside the loss function (`softmax_cross_entropy_with_logits` for TensorFlow, `nn.LogSoftMax` for Torch), that should be used preferably.<br />
   **Why**: The log(SoftMax) is numerically unstable for small probabilities, thus can lead to overflow and other undesirable results. Note that this is true for some other operations as well. Another popular trick is to add a small number inside the log to avoid the instability `log(softmax + 1e-6)`
 
-## Seq2seq
+## NLP
 
 * **What**: For seq2seq, reverse the order of the input sequence (\['I', 'am', 'hungry'\] becomes \['hungry', 'am', 'I'\]). Keep the target sequence intact.<br />
   **Why**: From the authors: "*This way, [...] that makes it easy for SGD to “establish communication” between the input and the output. We found this simple data transformation to greatly improve the performance of the LSTM.*"<br />
@@ -103,6 +103,9 @@ The excellent [CS231n](http://cs231n.github.io/) Stanford course already has a g
   **Ref**:
     1. *??*
     2. *Scheduled Sampling for Sequence Prediction with Recurrent Neural Networks, Samy Bengio et al.* (https://arxiv.org/abs/1506.03099)
+
+* **What**: By training in an unsupervised way a network to predict the next character of a text (char-RNN), the network will learn a representation which can then be used for a supervised task (here sentiment analysis).<br />
+  **Ref**: *Learning to Generate Reviews and Discovering Sentiment, Ilya Sutskever et al.* (https://arxiv.org/abs/1704.01444)
 
 ## Reinforcement learning
 
