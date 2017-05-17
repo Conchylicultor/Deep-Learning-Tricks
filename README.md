@@ -1,6 +1,6 @@
 # Deep Learning Tricks
 
-This is an attempt to enumerate different machine learning training tricks I gather around. The goal is to briefly give a description of the trick as well as an intuition about why it is working. My knowledge is quite limited so this is prone to errors/imprecisions. This should be a collaborative work so feel free to complete or correct.<br />
+This is an attempt to enumerate different machine learning training tricks I gather around as well as some [network architectures](networks.md). The goal is to briefly give a description of the trick as well as an intuition about why it is working. My knowledge is quite limited so this is prone to errors/imprecisions. This should be a collaborative work so feel free to complete or correct.<br />
 Most of the tricks may seem trivial for those who have some experience in machine learning but I feel like while there is a lot of very good theoretical material available for machine learning, there is still a lack of practical advice. Those would really have helped me when I started.<br />
 The excellent [CS231n](http://cs231n.github.io/) Stanford course already has a good list of training tricks.
 

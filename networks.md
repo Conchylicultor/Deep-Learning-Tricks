@@ -1,6 +1,6 @@
 # Networks
 
-Define some common neural networks architectures and ideas.
+Define some common neural network architectures and ideas.
 
 ## Computer vision
 
@@ -79,6 +79,20 @@ Define some common neural networks architectures and ideas.
 **Highway Networks**: Add residual connections to the RNN cells to helps the gradient flow. The residual connection is weighted with the help of a *transform gate*: `y = T(x) * H(x) + (1 - T(x)) * x`
 
 *Highway Networks, R. K. Srivastava, K. Greff, J. Schmidhuber* ([Arxiv](https://arxiv.org/abs/1505.00387))
+
+**Gated Linear Unit**: New cell type which can replace LSTM for NLP tasks. Uses 1-D convolution mixed with a gate mechanism instead of an activation function. Easier to parallelize because no temporal dependencies as with recurrent models. The GLU cells are wrapped into a residual block (input is added to output).
+
+![GLU Architecture](imgs/GLU.png)<br />
+*PathNet architecture*
+
+*Language Modeling with Gated Convolutional Networks, Yann N. Dauphin et al.* ([Arxiv](https://arxiv.org/abs/1612.08083))
+
+**Convolutional seq2seq**: Use GLU cells augmented with a decoder and an attention mechanism. The input consist of both the word embedding and the position embedding. Beat the GNMT model from Wu et al in speed and BLEU score. Use custom weight initialization adapted for the GLU.
+
+![conv_seq2seq](imgs/conv_seq2seq.png)<br />
+*PathNet architecture*
+
+*Convolutional Sequence to Sequence Learning, Jonas Gehring, Yann N. Dauphin et al.* ([Arxiv](https://arxiv.org/abs/1705.03122))
 
 ## Reinforcement learning
 
