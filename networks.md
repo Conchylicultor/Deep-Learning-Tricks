@@ -72,7 +72,8 @@ Define some common neural network architectures and ideas.
 
 **RTNN**: Recursive neural tensor network (not recurrent). Tree-like shape. Use 3d tensor in addition to matrix as weights. Original model used for sentiment analysis.
 
-**mLSTM**:  The cell state `h(t-1)` is first modified to an intermediate state dependent of the input: `m(t-1) = Wmh h(t-1) .* Wmx x(t)` before being used. Used for the Recurrent Highway Networks.
+**mLSTM**:  The cell state `h(t-1)` is first modified to an intermediate state dependent of the input: `m(t-1) = Wmh h(t-1) .* Wmx x(t)` before being used. This allows complex dependent transitions and can replace recurrent depth (depth between recurrent steps). Used for the Recurrent Highway Networks.
+
 *Multiplicative LSTM for sequence modelling Ben Krause et al.*  ([Arxiv](https://arxiv.org/abs/1609.07959))
 
 **Word2Vec**: Project each word in a high dimensional space which encode its semantic meaning (embedding).
