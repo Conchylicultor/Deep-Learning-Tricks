@@ -61,6 +61,15 @@ Define some common neural network architectures and ideas.
 
 **Neural Style**: Learn the input from white noise (the network has fixed weight and is a CNN trained on ImageNet). Isolate style and content. The loss function has two term. Style matching using Gram Matrix (capture the correlations between filters). Content matching: activations have to match the target image (same content).
 
+**Image Transformation Network**: For style transfer, instead of directly optimizing the image, add a generator network between the input and the loss network (similar to original neural style loss). Can be used for enhance image resolution (the input image is a low-resolution input, the content target is the ground-truth high-resolution image) where the Image Transformation Network is trained for a particular zoom factor.
+
+To encourage spatial smoothness in the output image, they add, to the content and style losses, a total variation regularizer.
+
+![ImgTransformationNetwork](imgs/ImgTransformationNetwork.png)<br />
+*Image Transformation Network*
+
+*Perceptual Losses for Real-Time Style Transfer and Super-Resolution, Justin Johnson, et al.* ([Arxiv](https://arxiv.org/abs/1603.08155))
+
 **CycleGAN**: Learn conjointly two generators `F` and `G` to do conversions between two domains to perform image translation (`G(x)=y`). Trained with one discriminator for each of the generator (For `G`: `Lgan(G) =E[ log(D(y)) ] + E[ 1-log(D(G(x)) ]`) and a "cycle-consistency cost" to force the bijections `G(F(y))=y` and `F(G(x))=x` (`Lcyc=E[ |F(G(x)) - x| ] + E[ |G(F(y)) - y| ]`).
 
 *Unpaired Image-to-Image Translation using Cycle-Consistent Adversarial Networks, Jun-Yan Zhu, et al.* ([Arxiv](https://arxiv.org/abs/1703.10593))
