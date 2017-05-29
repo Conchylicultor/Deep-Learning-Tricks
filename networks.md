@@ -65,6 +65,10 @@ Define some common neural network architectures and ideas.
 
 *Unpaired Image-to-Image Translation using Cycle-Consistent Adversarial Networks, Jun-Yan Zhu, et al.* ([Arxiv](https://arxiv.org/abs/1703.10593))
 
+**Instance Normalization**: Applied for style transfer where the network uses a single pass to generate a target image. It's possible to generate better results by replacing the batch normalization layer by a similar layer which individually normalize each instance of the batch.
+
+*Instance Normalization: The Missing Ingredient for Fast Stylization, Dmitry Ulyanov, et al.* ([Arxiv](https://arxiv.org/abs/1607.08022))
+
 **Image search/retrival**: Project the image into an embedding space. Search close match using KNN with the previously indexed images. Approximate KNN with KD-Tree.
 
 **Super resolution images**:...
