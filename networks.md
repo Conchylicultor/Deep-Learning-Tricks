@@ -30,7 +30,6 @@ Define some common neural network architectures and ideas.
 
 **SSD**: Region proposal (bounding boxes) to segment object, then classification, then overlapping detection.
 
-
 ### Segmentation
 
 **U-Net**: Add skip connections between the convolutionnal encoder and the deconvolutional decoder.
@@ -61,6 +60,10 @@ Define some common neural network architectures and ideas.
 ### Other
 
 **Neural Style**: Learn the input from white noise (the network has fixed weight and is a CNN trained on ImageNet). Isolate style and content. The loss function has two term. Style matching using Gram Matrix (capture the correlations between filters). Content matching: activations have to match the target image (same content).
+
+**CycleGAN**: Learn conjointly two generators `F` and `G` to do conversions between two domains to perform image translation (`G(x)=y`). Trained with one discriminator for each of the generator (For `G`: `Lgan(G) =E[ log(D(y)) ] + E[ 1-log(D(G(x)) ]`) and a "cycle-consistency cost" to force the bijections `G(F(y))=y` and `F(G(x))=x` (`Lcyc=E[ |F(G(x)) - x| ] + E[ |G(F(y)) - y| ]`).
+
+*Unpaired Image-to-Image Translation using Cycle-Consistent Adversarial Networks, Jun-Yan Zhu, et al.* ([Arxiv](https://arxiv.org/abs/1703.10593))
 
 **Image search/retrival**: Project the image into an embedding space. Search close match using KNN with the previously indexed images. Approximate KNN with KD-Tree.
 
