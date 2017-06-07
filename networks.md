@@ -137,6 +137,10 @@ To encourage spatial smoothness in the output image, they add, to the content an
 
 ## Other (low level)
 
+**Relation Networks**: Network architecture to learn relationship between a set of objects `O`: `RN(O) = f(sum_{i,j} [ g(o_i, o_j) ])`. `f` and `g` are learned functions (ex: MLP). `g` define the relation between 2 objects, and can also be conditioned on the task (take another argument corresponding to the question embedding `g(o_i, o_j, q)`). For image analysis, each object of the set can be a cell embeddings from a feature maps of the CNN (a 1&ast;1&ast;k block).
+
+*A simple neural network module for relational reasoning, Adam Santoro, et al.* ([Arxiv](https://arxiv.org/abs/1706.01427))
+
 **PathNet**: Network which can learn independent task and reusing knowledge it has already acquired. Some kind of fancy transfer learning. Works by combining genetics algorithm and gradient descent.
 
 1. Each layers of the network is composed of multiple block/modules (small neural networks like 20 neurons FC or CNN).
