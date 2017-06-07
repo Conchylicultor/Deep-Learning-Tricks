@@ -2,6 +2,19 @@
 
 Define some common neural network architectures and ideas.
 
+#### Table of Contents
+
+* [Computer vision](#computer-vision)
+    * [Image classification](#image-classification)
+    * [Detection](#detection)
+    * [Segmentation](#segmentation)
+    * [Image Captioning](#image-captioning)
+    * [Face Recognition](#face-recognition)
+    * [Other](#other)
+* [RNN/Natural Language Processing](#rnnnatural-language-processing)
+* [Reinforcement learning](#reinforcement-learning)
+* [Other (low level)](#other-low-level)
+
 ## Computer vision
 
 ### Image classification
