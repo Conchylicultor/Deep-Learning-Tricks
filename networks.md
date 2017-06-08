@@ -154,6 +154,18 @@ To encourage spatial smoothness in the output image, they add, to the content an
 
 *A simple neural network module for relational reasoning, Adam Santoro, et al.* ([Arxiv](https://arxiv.org/abs/1706.01427))
 
+**Interaction Networks**: Type of temporal architecture specialized to predict object interactions. Takes objects states and relations (ex: spring force between object) as input (from graph) and predict the next states of each object. Contrary to RNN, don't have internal state.
+
+*Interaction Networks for Learning about Objects, Relations and Physics, Peter W. Battaglia, et al.* ([Arxiv](https://arxiv.org/pdf/1612.00222.pdf))
+
+**Visual Interaction Network**: Model to physically simulate the next states of a video. Use 3 components trained jointly:
+
+* Visual encoder: CNN which take 3 images as input and output an embedding. CNN outputs are reshaped (into nb_obj&ast;emb_size). In addition to the RGB channel, 2 channels containing the normalized position (x,y) is added.
+* Dynamics predictor: RNN which predict the next embedding from the previous ones. Based on Interaction Network, but which take multiple time steps as input (compute a next state for t-1, t-2, t-4 (with 3 different Interactive Networks) and aggregate the candidates with an MLP for the final prediction). This allows to capture both fast and slow moves.
+* State decoder: Convert the embedding into physical state information (object positions and velocity). Simple MLP.
+
+*Visual Interaction Networks, Nicholas Watters, et al.* ([Arxiv](https://arxiv.org/abs/1706.01433))
+
 **PathNet**: Network which can learn independent task and reusing knowledge it has already acquired. Some kind of fancy transfer learning. Works by combining genetics algorithm and gradient descent.
 
 1. Each layers of the network is composed of multiple block/modules (small neural networks like 20 neurons FC or CNN).
@@ -167,7 +179,7 @@ To encourage spatial smoothness in the output image, they add, to the content an
 *PathNet: Evolution Channels Gradient Descent in Super Neural Networks, Chrisantha Fernando, Dylan Banarse et al.* ([Arxiv](https://arxiv.org/abs/1701.08734))
 
 **Sparsely-Gated Mixture-of-Experts**: Type of RNN cell allowing the network to have up to hundreds of billions of parameters.
-* The cell contains multiples modules (experts), each containing a different neural networks.
+* The cell contains multiple modules (experts), each containing a different neural networks.
 * A gating network choose which experts are used at each timestep (gating can be sparse or continuous). During training, some noise is added to the gating output to add some stochasticity in which experts are used. A SoftMax is applied on the top-K gating predictions to weight the corresponding expert outputs. A version exist using hierarchical mixture of experts by using a tree of gating networks (the gating networks at one level determine which branches are selected at the next level).
 * A contribution of the paper is about how to train that model efficiently by distributing the experts among devices and keep a batch size as big as possible.
 * Two additional terms are added to the loss. One to penalize the use of always the same expert (each expert has equal importance) and one to ensure a balance load among the experts (each expert process the same number of samples, loss harder to define because non derivable). By just using the importance loss, some experts can process samples very rarely but with high SoftMax score while other can process samples more often but with low weight which impact the distributed computing efficiency.
