@@ -52,6 +52,13 @@ Define some common neural network architectures and ideas.
 
 *U-Net: Convolutional Networks for Biomedical Image Segmentation, Olaf Ronneberger, et al.*, ([Arxiv](https://arxiv.org/abs/1505.04597))
 
+**Top-Down Modulation**: Similar to U-Net (Convolution for bottom-up and deconvolution for top bottom with lateral connections) but add network for the lateral connections. The features maps at each level from the lateral and top-bottom are concatenated.
+
+![TDM](imgs/TDM.png)<br />
+*TDM architecture*
+
+*Beyond Skip Connections: Top-Down Modulation for Object Detection, Abhinav Shrivastava, et al.*, ([Arxiv](https://arxiv.org/abs/1612.06851))
+
 **Multi-task Network Cascades**: Based on ResNet to perform instance based segmentation. Use cascade loss function to divide the segmentation task into 3 sub-tasks. Each task uses as input the output of the previous one (in addition to the shared features computed by the CNN).<br />
 *Instance-aware Semantic Segmentation via Multi-task Network Cascades, Jifeng Dai Kaiming He et al.*
 
